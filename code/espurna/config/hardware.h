@@ -256,6 +256,30 @@
     #define LED1_PIN            13
     #define LED1_PIN_INVERSE    1
 
+#elif defined(ITEAD_SONOFF_BASIC_MOD)
+    //OSLL: This MOD adds a general prupose input with MQTT notification on ITEAD SONOFF BASIC switch.
+    //      It uses the only avaliable pin in the board, phisical pin 9 - MTMS - GPIO14, that is already 
+    //      bound to 'BUTTON2_PIN' on the default 'ITEAD_SONOFF_BASIC' configuration.
+    // Info
+    #define MANUFACTURER        "ITEAD"
+    #define DEVICE              "SONOFF_BASIC_MOD"
+
+    // Buttons
+    #define BUTTON1_PIN         0
+    #define BUTTON1_MODE        BUTTON_PUSHBUTTON | BUTTON_DEFAULT_HIGH
+    #define BUTTON1_RELAY       1
+    #define BUTTON2_PIN         14
+    #define BUTTON2_MODE        BUTTON_PUSHBUTTON | BUTTON_SET_PULLUP | BUTTON_DEFAULT_HIGH
+    #define BUTTON2_RELAY       0   //OSLL: Detach from relay...
+
+    // Relays
+    #define RELAY1_PIN          12
+    #define RELAY1_TYPE         RELAY_TYPE_NORMAL
+
+    // LEDs
+    #define LED1_PIN            13
+    #define LED1_PIN_INVERSE    1
+
 #elif defined(ITEAD_SONOFF_RF)
 
     // Info
